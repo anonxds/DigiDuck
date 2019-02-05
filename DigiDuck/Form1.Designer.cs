@@ -34,7 +34,7 @@
             // 
             // btnadd
             // 
-            this.btnadd.Location = new System.Drawing.Point(105, 97);
+            this.btnadd.Location = new System.Drawing.Point(52, 58);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(75, 23);
             this.btnadd.TabIndex = 0;
@@ -44,11 +44,11 @@
             // 
             // cmdmod
             // 
-            this.cmdmod.Location = new System.Drawing.Point(269, 95);
+            this.cmdmod.Location = new System.Drawing.Point(159, 58);
             this.cmdmod.Name = "cmdmod";
             this.cmdmod.Size = new System.Drawing.Size(75, 23);
             this.cmdmod.TabIndex = 1;
-            this.cmdmod.Text = "button1";
+            this.cmdmod.Text = "Ver Patos";
             this.cmdmod.UseVisualStyleBackColor = true;
             this.cmdmod.Click += new System.EventHandler(this.cmdmod_Click);
             // 

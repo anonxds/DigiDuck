@@ -23,6 +23,7 @@ namespace DigiDuck
 
             AddDuck d = new AddDuck();
             d.Show();
+            this.Hide();
         }
 
         private void cmdmod_Click(object sender, EventArgs e)

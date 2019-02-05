@@ -49,17 +49,22 @@ namespace DigiDuck
                     {
                         d.Nada = "No";
                     }
-                    string query = string.Format("insert into Patos values ('{0}','{1}','{2}','{3}','{4}')", typeduck.Text, txtnombre.Text, lbltime.Text, d.Nada,listaquack.Text);
+                    string query = string.Format("insert into Patos values ('{0}','{1}','{2}','{3}','{4}','{5}')", typeduck.Text, txtnombre.Text, lbltime.Text, d.Nada,listaquack.Text,listacomportamiento.Text);
+                    string historial = string.Format("insert into historial values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm"),txtnombre.Text,listaquack.Text,d.Nada,listacomportamiento.Text,"Si",typeduck.Text);
                
+                    
                     s.Exe(query);
+                    s.Exe(historial);
+                    MessageBox.Show("Se registro exitosamente el pato "+ txtnombre.Text);
+                    clean();
                 
                 }
              
                 
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Este pato todavia vive");
+                MessageBox.Show("El "+typeduck.Text+ " pato todavia vive"+ex);
             }
         }
        
@@ -117,7 +122,23 @@ namespace DigiDuck
             
             
         }
-     
+        public void clean()
+        {
+            txtnombre.Text = null;
+            listacomportamiento.Text = null;
+            listaquack.Text = null;
+            typeduck.Text = null;
+            ryes.Checked = false;
+            Rno.Checked = false;
 
+            
+        }
+
+        private void btnreturn_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            f.Show();
+            this.Hide();
+        }
     }
 }

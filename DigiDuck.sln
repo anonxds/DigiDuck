@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiDuck", "DigiDuck\DigiDuck.csproj", "{BA05A8FC-4811-4AAA-A5CB-C1E04B70E52D}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Ducks", "Ducks\Ducks.vdproj", "{92381D03-72A5-4358-9684-D82CAE860214}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{BA05A8FC-4811-4AAA-A5CB-C1E04B70E52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA05A8FC-4811-4AAA-A5CB-C1E04B70E52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA05A8FC-4811-4AAA-A5CB-C1E04B70E52D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92381D03-72A5-4358-9684-D82CAE860214}.Debug|Any CPU.ActiveCfg = Debug
+		{92381D03-72A5-4358-9684-D82CAE860214}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

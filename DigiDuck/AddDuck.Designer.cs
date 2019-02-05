@@ -44,10 +44,12 @@
             this.lblswim = new System.Windows.Forms.Label();
             this.ryes = new System.Windows.Forms.RadioButton();
             this.Rno = new System.Windows.Forms.RadioButton();
+            this.btnreturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // typeduck
             // 
+            this.typeduck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeduck.FormattingEnabled = true;
             this.typeduck.Location = new System.Drawing.Point(86, 36);
             this.typeduck.Name = "typeduck";
@@ -57,7 +59,7 @@
             // lbltime
             // 
             this.lbltime.AutoSize = true;
-            this.lbltime.Location = new System.Drawing.Point(283, 36);
+            this.lbltime.Location = new System.Drawing.Point(303, 78);
             this.lbltime.Name = "lbltime";
             this.lbltime.Size = new System.Drawing.Size(82, 13);
             this.lbltime.TabIndex = 1;
@@ -66,14 +68,15 @@
             // hora
             // 
             this.hora.AutoSize = true;
-            this.hora.Location = new System.Drawing.Point(283, 61);
+            this.hora.Location = new System.Drawing.Point(303, 39);
             this.hora.Name = "hora";
-            this.hora.Size = new System.Drawing.Size(35, 13);
+            this.hora.Size = new System.Drawing.Size(42, 13);
             this.hora.TabIndex = 2;
-            this.hora.Text = "label1";
+            this.hora.Text = "Tiempo";
             // 
             // listacomportamiento
             // 
+            this.listacomportamiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listacomportamiento.FormattingEnabled = true;
             this.listacomportamiento.Location = new System.Drawing.Point(127, 115);
             this.listacomportamiento.Name = "listacomportamiento";
@@ -83,7 +86,7 @@
             // 
             // btnagregar
             // 
-            this.btnagregar.Location = new System.Drawing.Point(39, 248);
+            this.btnagregar.Location = new System.Drawing.Point(22, 237);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(75, 23);
             this.btnagregar.TabIndex = 4;
@@ -121,6 +124,7 @@
             // txtnombre
             // 
             this.txtnombre.Location = new System.Drawing.Point(86, 75);
+            this.txtnombre.MaxLength = 20;
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(100, 20);
             this.txtnombre.TabIndex = 8;
@@ -141,6 +145,7 @@
             // 
             // listaquack
             // 
+            this.listaquack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listaquack.FormattingEnabled = true;
             this.listaquack.Location = new System.Drawing.Point(86, 160);
             this.listaquack.Name = "listaquack";
@@ -178,11 +183,22 @@
             this.Rno.Text = "No";
             this.Rno.UseVisualStyleBackColor = true;
             // 
+            // btnreturn
+            // 
+            this.btnreturn.Location = new System.Drawing.Point(191, 237);
+            this.btnreturn.Name = "btnreturn";
+            this.btnreturn.Size = new System.Drawing.Size(75, 23);
+            this.btnreturn.TabIndex = 14;
+            this.btnreturn.Text = "Regresar";
+            this.btnreturn.UseVisualStyleBackColor = true;
+            this.btnreturn.Click += new System.EventHandler(this.btnreturn_Click);
+            // 
             // AddDuck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(693, 282);
+            this.Controls.Add(this.btnreturn);
             this.Controls.Add(this.Rno);
             this.Controls.Add(this.ryes);
             this.Controls.Add(this.lblswim);
@@ -221,5 +237,6 @@
         private System.Windows.Forms.Label lblswim;
         private System.Windows.Forms.RadioButton ryes;
         private System.Windows.Forms.RadioButton Rno;
+        private System.Windows.Forms.Button btnreturn;
     }
 }
