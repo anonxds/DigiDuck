@@ -30,6 +30,7 @@ namespace DigiDuck
         {
             Modificar d = new Modificar();
             d.Show();
+            this.Hide();
         }
     }
 }

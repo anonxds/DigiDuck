@@ -146,7 +146,7 @@ namespace DigiDuck
 
             listavolar.Text = null;
             listaquack.Text = null;
-            pato.Text = "";
+            pato.Text = null;
             txtnombre.Text   = lblfecha.Text = lblnada.Text = lblnombre.Text = lblquack.Text = lblvolar.Text = "";
             
         }
@@ -256,12 +256,20 @@ namespace DigiDuck
         }
         public void filtros()
         {
-            string[] fil = new string[5] {"Viven","No viven","Mallard","Decoy","Fecha" };
+            string[] fil = new string[5] {"Viven","No viven","Mallard","Decoy","Red Head" };
             for (int i = 0; i < 5; i++)
             {
                 filtrar.Items.Add(fil[i]);
             }
 
+         
+
+           
+
+
+        }
+        public void fil()
+        {
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
 
@@ -278,31 +286,35 @@ namespace DigiDuck
             con.Close();
 
             //opcion de usar el metodo estrategia
-            switch (filtrar.Text)
+            switch (filtrar.SelectedIndex)
             {
-                case "Viven":
+                case 0:
                     DataView dv = new DataView(dt, "Vive='Si'", "Vive desc", DataViewRowState.CurrentRows);
                     historial.DataSource = dv;
                     break;
-                case "No viven":
+                case 1:
                     DataView dc = new DataView(dt, "Vive='No'", "Vive desc", DataViewRowState.CurrentRows);
                     historial.DataSource = dc;
                     break;
-                case "Mallard":
+                case 2:
                     DataView dx = new DataView(dt, "Tipo='Mallard'", "Vive desc", DataViewRowState.CurrentRows);
                     historial.DataSource = dx;
                     break;
-               
+                case 3:
+                    DataView da = new DataView(dt, "Tipo='Decoy'", "Vive desc", DataViewRowState.CurrentRows);
+                    historial.DataSource = da;
+                    break;
+                case 4:
+                    DataView dq = new DataView(dt, "Tipo='Red head'", "Vive desc", DataViewRowState.CurrentRows);
+                    historial.DataSource = dq;
+                    break;
+
             }
-
-           
-
-
         }
 
         private void filtrar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            filtros();
+            fil();
         }
     }
 }

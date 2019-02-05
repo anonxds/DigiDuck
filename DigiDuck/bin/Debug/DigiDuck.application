@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="DigiDuck.exe.manifest" size="8447">
+    <dependentAssembly dependencyType="install" codebase="DigiDuck.exe.manifest" size="8448">
       <assemblyIdentity name="DigiDuck.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>y8994qnaCUimgl5YeWXn2K4VcnQoyozKk+u1SrO5oyA=</dsig:DigestValue>
+        <dsig:DigestValue>qVhwy4sqX/7IFSj71zJSgs5FprKXS/eL/37pZkf44ts=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

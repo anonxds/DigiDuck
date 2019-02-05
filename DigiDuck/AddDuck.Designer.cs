@@ -60,7 +60,7 @@
             // lbltime
             // 
             this.lbltime.AutoSize = true;
-            this.lbltime.Location = new System.Drawing.Point(303, 78);
+            this.lbltime.Location = new System.Drawing.Point(289, 75);
             this.lbltime.Name = "lbltime";
             this.lbltime.Size = new System.Drawing.Size(82, 13);
             this.lbltime.TabIndex = 1;
@@ -69,7 +69,7 @@
             // hora
             // 
             this.hora.AutoSize = true;
-            this.hora.Location = new System.Drawing.Point(303, 39);
+            this.hora.Location = new System.Drawing.Point(289, 36);
             this.hora.Name = "hora";
             this.hora.Size = new System.Drawing.Size(42, 13);
             this.hora.TabIndex = 2;
@@ -156,6 +156,7 @@
             this.listaquack.Name = "listaquack";
             this.listaquack.Size = new System.Drawing.Size(121, 21);
             this.listaquack.TabIndex = 10;
+            this.listaquack.SelectedIndexChanged += new System.EventHandler(this.listaquack_SelectedIndexChanged);
             // 
             // lblswim
             // 

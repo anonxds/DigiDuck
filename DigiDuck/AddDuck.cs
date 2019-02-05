@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using DigiDuck.Grazna;
+using System.Media;
+using System.IO;
 
 namespace DigiDuck
 {
@@ -26,6 +28,7 @@ namespace DigiDuck
             volar();
             clocks();
             test();
+           
         }
 
         InfoDuck d = new InfoDuck();
@@ -149,5 +152,33 @@ namespace DigiDuck
           btnagregar.Enabled=  txtnombre.Enabled = listacomportamiento.Enabled = listaquack.Enabled = ryes.Enabled = Rno.Enabled = true;
        }
 
+        private void listaquack_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (listaquack.SelectedIndex)
+            {
+                case 0:
+                    quack();
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+                    clown();
+                    break;
+            }
+        }
+        public void quack()
+        {
+            Stream str = Properties.Resources.quack;
+            SoundPlayer s = new SoundPlayer(str);
+            s.Play();
+        }
+        public void clown()
+        {
+            Stream stream = Properties.Resources.clown;
+            SoundPlayer s = new SoundPlayer(stream);
+            s.Play();
+        }
+        
     }
 }

@@ -102,6 +102,14 @@
       <DependentUpon>AddDuck.cs</DependentUpon>
     </Compile>
     <Compile Include="Ducks\Mallard.cs" />
+    <Compile Include="Filtros\IFiltro.cs" />
+    <Compile Include="Filtros\Pordecoy.cs" />
+    <Compile Include="Filtros\PorMallard.cs" />
+    <Compile Include="Filtros\Porrubber.cs" />
+    <Compile Include="Filtros\PorSinvida.cs" />
+    <Compile Include="Filtros\Portoy.cs" />
+    <Compile Include="Filtros\Portredhead.cs" />
+    <Compile Include="Filtros\PorVida.cs" />
     <Compile Include="Flyaway.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -146,6 +154,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="DigiDuck_TemporaryKey.pfx" />
     <None Include="packages.config" />
@@ -175,6 +184,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\clown.wav" />
+    <None Include="Resources\clowns.mp3" />
+    <None Include="Resources\clown-horn-sound-effect_1.mp3" />
+    <None Include="bin\Debug\quack.wav" />
     <Content Include="x64\SQLite.Interop.dll" />
     <Content Include="x86\SQLite.Interop.dll" />
   </ItemGroup>
