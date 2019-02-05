@@ -11,7 +11,7 @@ namespace DigiDuck.Grazna
         public string TypeQuack()
         {
             InfoDuck d = new InfoDuck();
-            d.Grazna = "ahhhhhhhhhhhhhhhhhhhhhhhhhh";
+            d.Grazna = "Quack!";
             return d.Grazna;
         }
     }

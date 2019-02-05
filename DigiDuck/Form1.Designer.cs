@@ -34,7 +34,7 @@
             // 
             // btnadd
             // 
-            this.btnadd.Location = new System.Drawing.Point(52, 58);
+            this.btnadd.Location = new System.Drawing.Point(61, 60);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(75, 23);
             this.btnadd.TabIndex = 0;
@@ -44,7 +44,7 @@
             // 
             // cmdmod
             // 
-            this.cmdmod.Location = new System.Drawing.Point(159, 58);
+            this.cmdmod.Location = new System.Drawing.Point(142, 60);
             this.cmdmod.Name = "cmdmod";
             this.cmdmod.Size = new System.Drawing.Size(75, 23);
             this.cmdmod.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(290, 152);
             this.Controls.Add(this.cmdmod);
             this.Controls.Add(this.btnadd);
             this.Name = "Form1";

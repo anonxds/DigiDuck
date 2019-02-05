@@ -14,7 +14,7 @@ namespace DigiDuck
 {
     public partial class AddDuck : Form
     {
-       
+
         private DataSet ds = new DataSet();
         private DataTable dt = new DataTable();
         Sqlite s = new Sqlite();
@@ -29,7 +29,7 @@ namespace DigiDuck
         }
 
         InfoDuck d = new InfoDuck();
-        
+
         private void btnagregar_Click(object sender, EventArgs e)
         {
             try
@@ -43,34 +43,34 @@ namespace DigiDuck
                     InfoDuck d = new InfoDuck();
                     if (ryes.Checked)
                     {
-                        d.Nada = "yes";
+                        d.Nada = "Si";
                     }
                     else if (Rno.Checked)
                     {
                         d.Nada = "No";
                     }
-                    string query = string.Format("insert into Patos values ('{0}','{1}','{2}','{3}','{4}','{5}')", typeduck.Text, txtnombre.Text, lbltime.Text, d.Nada,listaquack.Text,listacomportamiento.Text);
-                    string historial = string.Format("insert into historial values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm"),txtnombre.Text,listaquack.Text,d.Nada,listacomportamiento.Text,"Si",typeduck.Text);
-               
-                    
+                    string query = string.Format("insert into Patos values ('{0}','{1}','{2}','{3}','{4}','{5}')", typeduck.Text, txtnombre.Text, lbltime.Text, d.Nada, listaquack.Text, listacomportamiento.Text);
+                    string historial = string.Format("insert into historial values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm"), txtnombre.Text, listaquack.Text, d.Nada, listacomportamiento.Text, "Si", typeduck.Text);
+
+
                     s.Exe(query);
                     s.Exe(historial);
-                    MessageBox.Show("Se registro exitosamente el pato "+ txtnombre.Text);
+                    MessageBox.Show("Se registro exitosamente el pato " + txtnombre.Text);
                     clean();
-                
+
                 }
-             
-                
+
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("El "+typeduck.Text+ " pato todavia vive"+ex);
+                MessageBox.Show("El " + typeduck.Text + " pato todavia vive" + ex);
             }
         }
-       
+
         private void ducks()
         {
-            string[] typeducks = new string[5] {"Mallard","Red head","Decoy","Toy","Rubber"};
+            string[] typeducks = new string[5] { "Mallard", "Red head", "Decoy", "Toy", "Rubber" };
             for (int i = 0; i < 5; i++)
             {
                 typeduck.Items.Add(typeducks[i]);
@@ -83,7 +83,7 @@ namespace DigiDuck
         }
         private void volar()
         {
-            Ivolar ivolar,novolar,rocket;
+            Ivolar ivolar, novolar, rocket;
             ivolar = new Flyaway();
             novolar = new Nofly();
             rocket = new Rocketpower();
@@ -106,21 +106,21 @@ namespace DigiDuck
         }
         public void test()
         {
-            
-            IQuack quack,squeak,mute;
+
+            IQuack quack, squeak, mute;
             Setgraz s = new Setgraz();
             mute = new Mute();
 
             quack = new Quack();
             squeak = new Squeak();
 
-           
-           listaquack.Items.Add(quack.TypeQuack());
+
+            listaquack.Items.Add(quack.TypeQuack());
             listaquack.Items.Add(mute.TypeQuack());
             listaquack.Items.Add(squeak.TypeQuack());
-            
-            
-            
+
+
+
         }
         public void clean()
         {
@@ -131,7 +131,7 @@ namespace DigiDuck
             ryes.Checked = false;
             Rno.Checked = false;
 
-            
+
         }
 
         private void btnreturn_Click(object sender, EventArgs e)
@@ -140,5 +140,14 @@ namespace DigiDuck
             f.Show();
             this.Hide();
         }
+
+        private void typeduck_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dis();
+        }
+        public void dis(){
+          btnagregar.Enabled=  txtnombre.Enabled = listacomportamiento.Enabled = listaquack.Enabled = ryes.Enabled = Rno.Enabled = true;
+       }
+
     }
 }

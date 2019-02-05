@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using DigiDuck.Grazna;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.IO;
 
 namespace DigiDuck
 {
@@ -24,13 +27,14 @@ namespace DigiDuck
             volar();
             quack();
             tableHis();
+            filtros();
         }
 
         private void btnkill_Click(object sender, EventArgs e)
         {
             InfoDuck d = new InfoDuck();
             Sqlite s = new Sqlite();
-            string matar = string.Format("insert into historial values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm"), txtnombre.Text, listaquack.Text, d.Nada, listavolar.Text, "No", pato.Text);
+            string matar = string.Format("insert into historial (Fecha,Nombre,Vive,Tipo) values ('{0}','{1}','{2}','{3}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm"), txtnombre.Text, "No", pato.Text);
             s.Exe(matar);
             string query = string.Format("delete from Patos where IdDuck = '{0}'",pato.Text);
             con.Open();
@@ -42,6 +46,7 @@ namespace DigiDuck
             cmd.ExecuteNonQuery();
             
             con.Close();
+            clean();
             MessageBox.Show("Se dio de baja el pato " + lblnombre.Text);
         }
         private void setcon()
@@ -100,6 +105,9 @@ namespace DigiDuck
                 lblnada.Text = dr["Nada"].ToString();
                 lblvolar.Text = dr["Volar"].ToString();
                 txtnombre.Text = dr["Nombre"].ToString();
+                listaquack.Text = dr["Quack"].ToString();
+                listavolar.Text = dr["Volar"].ToString();
+                
             }
             con.Close();
         }
@@ -117,11 +125,30 @@ namespace DigiDuck
             {
                 d.Nada = "No";
             }
-            string up = string.Format("update Patos set Nombre = '{0}',Nada = '{1}',Quack='{2}',Volar='{3}' where IdDuck = '{4}'",txtnombre.Text,d.Nada,listaquack.Text,listavolar.Text,pato.Text);
-            s.Exe(up);
-            string query = string.Format("insert into historial values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm"),txtnombre.Text,listaquack.Text,d.Nada,listavolar.Text,"si",pato.Text);
-            s.Exe(query);
-            MessageBox.Show("Se registro exitosamente");
+            if (listaquack.Text == "" || listavolar.Text == "")
+            {
+                MessageBox.Show("Anade un comportamiento");
+
+            }
+            else
+            {
+
+                string up = string.Format("update Patos set Nombre = '{0}',Nada = '{1}',Quack='{2}',Volar='{3}' where IdDuck = '{4}'", txtnombre.Text, d.Nada, listaquack.Text, listavolar.Text, pato.Text);
+                s.Exe(up);
+                string query = string.Format("insert into historial values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm"), txtnombre.Text, listaquack.Text, d.Nada, listavolar.Text, "si", pato.Text);
+                s.Exe(query);
+                MessageBox.Show("Se registro exitosamente");
+            }
+
+        }
+        public void clean()
+        {
+
+            listavolar.Text = null;
+            listaquack.Text = null;
+            pato.Text = "";
+            txtnombre.Text   = lblfecha.Text = lblnada.Text = lblnombre.Text = lblquack.Text = lblvolar.Text = "";
+            
         }
         private void volar()
         {
@@ -175,6 +202,107 @@ namespace DigiDuck
             historial.DataSource = dt;
             con.Close();
 
+        }
+
+        //
+       public  void ExportDataTableToPdf(DataGridView dgw, string filename)
+        {
+            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+            PdfPTable pdfPTable = new PdfPTable(dgw.Columns.Count);
+            pdfPTable.DefaultCell.Padding = 3;
+            pdfPTable.WidthPercentage = 100;
+            pdfPTable.HorizontalAlignment = Element.ALIGN_LEFT;
+            pdfPTable.DefaultCell.BorderWidth = 1;
+            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+            foreach(DataGridViewColumn column in dgw.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, text));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240,240,240);
+                pdfPTable.AddCell(cell);
+            }
+            foreach(DataGridViewRow row in dgw.Rows)
+            {
+                foreach(DataGridViewCell cell in row.Cells)
+                {
+                    pdfPTable.AddCell(new Phrase(cell.Value.ToString(), text));
+                }
+            }
+            var saveFilediloge = new SaveFileDialog();
+            saveFilediloge.FileName = filename;
+            saveFilediloge.DefaultExt = ".pdf";
+            if (saveFilediloge.ShowDialog() == DialogResult.OK)
+            {
+                using(FileStream stream = new FileStream(saveFilediloge.FileName, FileMode.Create))
+                {
+                    Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                    PdfWriter.GetInstance(pdfdoc, stream);
+                    pdfdoc.Open();
+                    pdfdoc.Add(pdfPTable);
+                    pdfdoc.Close();
+                    stream.Close();
+                }
+            }
+          
+        }
+
+        private void btnhistorial_Click(object sender, EventArgs e)
+        {
+            ExportDataTableToPdf(historial, "memes");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+        public void filtros()
+        {
+            string[] fil = new string[5] {"Viven","No viven","Mallard","Decoy","Fecha" };
+            for (int i = 0; i < 5; i++)
+            {
+                filtrar.Items.Add(fil[i]);
+            }
+
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+
+
+            setcon();
+            con.Open();
+            cmd = con.CreateCommand();
+            string cmdt = "select * from historial";
+            db = new SQLiteDataAdapter(cmdt, con);
+            ds.Reset();
+            db.Fill(ds);
+            dt = ds.Tables[0];
+            historial.DataSource = dt;
+            con.Close();
+
+            //opcion de usar el metodo estrategia
+            switch (filtrar.Text)
+            {
+                case "Viven":
+                    DataView dv = new DataView(dt, "Vive='Si'", "Vive desc", DataViewRowState.CurrentRows);
+                    historial.DataSource = dv;
+                    break;
+                case "No viven":
+                    DataView dc = new DataView(dt, "Vive='No'", "Vive desc", DataViewRowState.CurrentRows);
+                    historial.DataSource = dc;
+                    break;
+                case "Mallard":
+                    DataView dx = new DataView(dt, "Tipo='Mallard'", "Vive desc", DataViewRowState.CurrentRows);
+                    historial.DataSource = dx;
+                    break;
+               
+            }
+
+           
+
+
+        }
+
+        private void filtrar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filtros();
         }
     }
 }

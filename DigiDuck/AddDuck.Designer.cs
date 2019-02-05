@@ -55,6 +55,7 @@
             this.typeduck.Name = "typeduck";
             this.typeduck.Size = new System.Drawing.Size(121, 21);
             this.typeduck.TabIndex = 0;
+            this.typeduck.SelectedIndexChanged += new System.EventHandler(this.typeduck_SelectedIndexChanged);
             // 
             // lbltime
             // 
@@ -77,6 +78,7 @@
             // listacomportamiento
             // 
             this.listacomportamiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listacomportamiento.Enabled = false;
             this.listacomportamiento.FormattingEnabled = true;
             this.listacomportamiento.Location = new System.Drawing.Point(127, 115);
             this.listacomportamiento.Name = "listacomportamiento";
@@ -86,6 +88,7 @@
             // 
             // btnagregar
             // 
+            this.btnagregar.Enabled = false;
             this.btnagregar.Location = new System.Drawing.Point(22, 237);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(75, 23);
@@ -123,6 +126,7 @@
             // 
             // txtnombre
             // 
+            this.txtnombre.Enabled = false;
             this.txtnombre.Location = new System.Drawing.Point(86, 75);
             this.txtnombre.MaxLength = 20;
             this.txtnombre.Name = "txtnombre";
@@ -146,6 +150,7 @@
             // listaquack
             // 
             this.listaquack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listaquack.Enabled = false;
             this.listaquack.FormattingEnabled = true;
             this.listaquack.Location = new System.Drawing.Point(86, 160);
             this.listaquack.Name = "listaquack";
@@ -164,6 +169,7 @@
             // ryes
             // 
             this.ryes.AutoSize = true;
+            this.ryes.Enabled = false;
             this.ryes.Location = new System.Drawing.Point(63, 204);
             this.ryes.Name = "ryes";
             this.ryes.Size = new System.Drawing.Size(34, 17);
@@ -175,6 +181,7 @@
             // Rno
             // 
             this.Rno.AutoSize = true;
+            this.Rno.Enabled = false;
             this.Rno.Location = new System.Drawing.Point(127, 204);
             this.Rno.Name = "Rno";
             this.Rno.Size = new System.Drawing.Size(39, 17);

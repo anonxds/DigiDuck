@@ -48,6 +48,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnregresar = new System.Windows.Forms.Button();
             this.historial = new System.Windows.Forms.DataGridView();
+            this.btnhistorial = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.filtrar = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.labNoel10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.historial)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,38 +83,38 @@
             // lblnombre
             // 
             this.lblnombre.AutoSize = true;
-            this.lblnombre.Location = new System.Drawing.Point(28, 87);
+            this.lblnombre.Location = new System.Drawing.Point(71, 89);
             this.lblnombre.Name = "lblnombre";
-            this.lblnombre.Size = new System.Drawing.Size(35, 13);
+            this.lblnombre.Size = new System.Drawing.Size(10, 13);
             this.lblnombre.TabIndex = 2;
-            this.lblnombre.Text = "label1";
+            this.lblnombre.Text = " ";
             // 
             // lblquack
             // 
             this.lblquack.AutoSize = true;
-            this.lblquack.Location = new System.Drawing.Point(28, 118);
+            this.lblquack.Location = new System.Drawing.Point(71, 120);
             this.lblquack.Name = "lblquack";
-            this.lblquack.Size = new System.Drawing.Size(35, 13);
+            this.lblquack.Size = new System.Drawing.Size(10, 13);
             this.lblquack.TabIndex = 3;
-            this.lblquack.Text = "label2";
+            this.lblquack.Text = " ";
             // 
             // lblnada
             // 
             this.lblnada.AutoSize = true;
-            this.lblnada.Location = new System.Drawing.Point(28, 150);
+            this.lblnada.Location = new System.Drawing.Point(71, 152);
             this.lblnada.Name = "lblnada";
-            this.lblnada.Size = new System.Drawing.Size(35, 13);
+            this.lblnada.Size = new System.Drawing.Size(10, 13);
             this.lblnada.TabIndex = 4;
-            this.lblnada.Text = "label3";
+            this.lblnada.Text = " ";
             // 
             // lblfecha
             // 
             this.lblfecha.AutoSize = true;
-            this.lblfecha.Location = new System.Drawing.Point(28, 217);
+            this.lblfecha.Location = new System.Drawing.Point(117, 219);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(35, 13);
+            this.lblfecha.Size = new System.Drawing.Size(10, 13);
             this.lblfecha.TabIndex = 5;
-            this.lblfecha.Text = "label4";
+            this.lblfecha.Text = " ";
             // 
             // txtnombre
             // 
@@ -174,11 +182,11 @@
             // lblvolar
             // 
             this.lblvolar.AutoSize = true;
-            this.lblvolar.Location = new System.Drawing.Point(28, 184);
+            this.lblvolar.Location = new System.Drawing.Point(71, 186);
             this.lblvolar.Name = "lblvolar";
-            this.lblvolar.Size = new System.Drawing.Size(35, 13);
+            this.lblvolar.Size = new System.Drawing.Size(10, 13);
             this.lblvolar.TabIndex = 12;
-            this.lblvolar.Text = "label1";
+            this.lblvolar.Text = " ";
             // 
             // label1
             // 
@@ -237,17 +245,100 @@
             // 
             // historial
             // 
+            this.historial.AllowUserToAddRows = false;
             this.historial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.historial.Location = new System.Drawing.Point(23, 430);
             this.historial.Name = "historial";
             this.historial.Size = new System.Drawing.Size(765, 150);
             this.historial.TabIndex = 19;
             // 
+            // btnhistorial
+            // 
+            this.btnhistorial.Location = new System.Drawing.Point(607, 401);
+            this.btnhistorial.Name = "btnhistorial";
+            this.btnhistorial.Size = new System.Drawing.Size(92, 23);
+            this.btnhistorial.TabIndex = 20;
+            this.btnhistorial.Text = "Exportar a PDF";
+            this.btnhistorial.UseVisualStyleBackColor = true;
+            this.btnhistorial.Click += new System.EventHandler(this.btnhistorial_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(624, 298);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // filtrar
+            // 
+            this.filtrar.FormattingEnabled = true;
+            this.filtrar.Location = new System.Drawing.Point(578, 374);
+            this.filtrar.Name = "filtrar";
+            this.filtrar.Size = new System.Drawing.Size(121, 21);
+            this.filtrar.TabIndex = 22;
+            this.filtrar.SelectedIndexChanged += new System.EventHandler(this.filtrar_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 186);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Vuela";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 219);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Fecha de registro";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 152);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Nada";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 120);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 13);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Quack";
+            // 
+            // labNoel10
+            // 
+            this.labNoel10.AutoSize = true;
+            this.labNoel10.Location = new System.Drawing.Point(12, 89);
+            this.labNoel10.Name = "labNoel10";
+            this.labNoel10.Size = new System.Drawing.Size(44, 13);
+            this.labNoel10.TabIndex = 23;
+            this.labNoel10.Text = "Nombre";
+            // 
             // Modificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 592);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.labNoel10);
+            this.Controls.Add(this.filtrar);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnhistorial);
             this.Controls.Add(this.historial);
             this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.label5);
@@ -298,5 +389,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnregresar;
         private System.Windows.Forms.DataGridView historial;
+        private System.Windows.Forms.Button btnhistorial;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox filtrar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labNoel10;
     }
 }
