@@ -11,6 +11,8 @@ using System.Data.SQLite;
 using DigiDuck.Grazna;
 using System.Media;
 using System.IO;
+using DigiDuck.Ducks;
+using DigiDuck.Properties;
 
 namespace DigiDuck
 {
@@ -24,42 +26,32 @@ namespace DigiDuck
         public AddDuck()
         {
             InitializeComponent();
-            ducks();
-            volar();
+            ducks();      
             clocks();
-            test();
-           
+            
+
+
         }
 
-        InfoDuck d = new InfoDuck();
-
+      
         private void btnagregar_Click(object sender, EventArgs e)
         {
             try
             {
                 if (String.IsNullOrEmpty(txtnombre.Text))
                 {
-                    MessageBox.Show("por favor llene los datos");
+                    MessageBox.Show("Pongale un nombre");
                 }
                 else
                 {
-                    InfoDuck d = new InfoDuck();
-                    if (ryes.Checked)
-                    {
-                        d.Nada = "Si";
-                    }
-                    else if (Rno.Checked)
-                    {
-                        d.Nada = "No";
-                    }
-                    string query = string.Format("insert into Patos values ('{0}','{1}','{2}','{3}','{4}','{5}')", typeduck.Text, txtnombre.Text, lbltime.Text, d.Nada, listaquack.Text, listacomportamiento.Text);
-                    string historial = string.Format("insert into historial values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm"), txtnombre.Text, listaquack.Text, d.Nada, listacomportamiento.Text, "Si", typeduck.Text);
-
-
+                    string query = string.Format("insert into Patos values ('{0}','{1}','{2}','{3}','{4}','{5}')", typeduck.Text, txtnombre.Text, lbltime.Text, lblN.Text, lblQ.Text, lblfly.Text);
+                    string historial = string.Format("insert into historial values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm"), txtnombre.Text, lblQ.Text, lblN.Text ,lblfly.Text, lblN.Text, typeduck.Text);
                     s.Exe(query);
                     s.Exe(historial);
                     MessageBox.Show("Se registro exitosamente el pato " + txtnombre.Text);
                     clean();
+
+                    //aun no logro entender a que se refiere con esto?????????
 
                 }
 
@@ -73,7 +65,7 @@ namespace DigiDuck
 
         private void ducks()
         {
-            string[] typeducks = new string[5] { "Mallard", "Red head", "Decoy", "Toy", "Rubber" };
+            string[] typeducks = new string[5] { "Mallard", "Toy","Decoy","Rubber","Red Head" };
             for (int i = 0; i < 5; i++)
             {
                 typeduck.Items.Add(typeducks[i]);
@@ -84,18 +76,7 @@ namespace DigiDuck
         {
 
         }
-        private void volar()
-        {
-            Ivolar ivolar, novolar, rocket;
-            ivolar = new Flyaway();
-            novolar = new Nofly();
-            rocket = new Rocketpower();
-            listacomportamiento.Items.Add(ivolar.Comportamiento());
-            listacomportamiento.Items.Add(novolar.Comportamiento());
-            listacomportamiento.Items.Add(rocket.Comportamiento());
-
-        }
-
+    
         private void clock_Tick(object sender, EventArgs e)
         {
             lbltime.Text = DateTime.Now.ToLongTimeString();
@@ -107,24 +88,9 @@ namespace DigiDuck
             clock.Start();
             lbltime.Text = DateTime.Now.ToLongTimeString();
         }
-        public void test()
-        {
-
-            IQuack quack, squeak, mute;
-            Setgraz s = new Setgraz();
-            mute = new Mute();
-
-            quack = new Quack();
-            squeak = new Squeak();
-
-
-            listaquack.Items.Add(quack.TypeQuack());
-            listaquack.Items.Add(mute.TypeQuack());
-            listaquack.Items.Add(squeak.TypeQuack());
-
-
-
-        }
+        IQuack quack, squeak, mute;
+      
+       
         public void clean()
         {
             txtnombre.Text = null;
@@ -133,7 +99,8 @@ namespace DigiDuck
             typeduck.Text = null;
             ryes.Checked = false;
             Rno.Checked = false;
-
+            lblfly.Text = lblN.Text = lblQ.Text = null;
+            btnagregar.Enabled = false;
 
         }
 
@@ -147,38 +114,65 @@ namespace DigiDuck
         private void typeduck_SelectedIndexChanged(object sender, EventArgs e)
         {
             dis();
+            Iduck iduck;
+            switch (typeduck.SelectedIndex)
+            {
+                case 0:
+                    iduck = new Mallard();
+                    iduck.TypeDuck(lblQ, lblfly, lblN,duckPic);
+                    
+                    break;
+                case 1:
+                    {
+                        iduck = new Toy();
+                        iduck.TypeDuck(lblQ, lblfly, lblN, duckPic);
+                        break;
+                    }
+                case 2:
+                    iduck = new Decoy();
+
+                    iduck.TypeDuck(lblQ, lblfly, lblN, duckPic);
+                    break;
+                case 3:
+                    iduck = new Rubber();
+                    iduck.TypeDuck(lblQ, lblfly, lblN, duckPic);
+                    break;
+                case 4:
+                    iduck = new RedHead();
+                    iduck.TypeDuck(lblQ, lblfly, lblN, duckPic);
+                    break;
+
+
+            }
         }
         public void dis(){
-          btnagregar.Enabled=  txtnombre.Enabled = listacomportamiento.Enabled = listaquack.Enabled = ryes.Enabled = Rno.Enabled = true;
-       }
+        btnagregar.Enabled =   txtnombre.Enabled = true;
+        }
+        public void en()
+        {
+            btnagregar.Enabled = txtnombre.Enabled = listacomportamiento.Enabled = listaquack.Enabled = ryes.Enabled = Rno.Enabled = false;
+
+        }
 
         private void listaquack_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (listaquack.SelectedIndex)
             {
                 case 0:
-                    quack();
+                    quack = new Quack();
+                    quack.Typesound();
                     break;
                 case 1:
 
                     break;
                 case 2:
-                    clown();
+                    squeak = new Squeak();
+                    squeak.Typesound();
+                 
                     break;
             }
         }
-        public void quack()
-        {
-            Stream str = Properties.Resources.quack;
-            SoundPlayer s = new SoundPlayer(str);
-            s.Play();
-        }
-        public void clown()
-        {
-            Stream stream = Properties.Resources.clown;
-            SoundPlayer s = new SoundPlayer(stream);
-            s.Play();
-        }
-        
+       
+       
     }
 }

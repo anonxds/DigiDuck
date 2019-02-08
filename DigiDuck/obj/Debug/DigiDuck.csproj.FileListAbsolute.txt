@@ -26,3 +26,31 @@ C:\Users\Reborn 3.0\source\repos\DigiDuck\DigiDuck\obj\Debug\DigiDuck.pdb
 C:\Users\Reborn 3.0\source\repos\DigiDuck\DigiDuck\bin\Debug\itextsharp.dll
 C:\Users\Reborn 3.0\source\repos\DigiDuck\DigiDuck\bin\Debug\itextsharp.xml
 C:\Users\Reborn 3.0\source\repos\DigiDuck\DigiDuck\obj\Debug\DigiDuck.csprojAssemblyReference.cache
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.csprojAssemblyReference.cache
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.AddDuck.resources
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.Form1.resources
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.Modificar.resources
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.Properties.Resources.resources
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.csproj.GenerateResource.cache
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.exe
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.pdb
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\DigiDuck.exe.config
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\DigiDuck.exe.manifest
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\DigiDuck.application
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\DigiDuck.exe
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\DigiDuck.pdb
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\EntityFramework.dll
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\itextsharp.dll
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\System.Data.SQLite.dll
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\EntityFramework.xml
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\itextsharp.xml
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\System.Data.SQLite.xml
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.exe.manifest
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.application
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.csproj.CopyComplete

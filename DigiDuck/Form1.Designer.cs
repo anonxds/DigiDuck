@@ -34,19 +34,21 @@
             // 
             // btnadd
             // 
-            this.btnadd.Location = new System.Drawing.Point(61, 60);
+            this.btnadd.Location = new System.Drawing.Point(86, 92);
+            this.btnadd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(75, 23);
+            this.btnadd.Size = new System.Drawing.Size(112, 59);
             this.btnadd.TabIndex = 0;
-            this.btnadd.Text = "agregar";
+            this.btnadd.Text = "Agregar Patos";
             this.btnadd.UseVisualStyleBackColor = true;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // cmdmod
             // 
-            this.cmdmod.Location = new System.Drawing.Point(142, 60);
+            this.cmdmod.Location = new System.Drawing.Point(227, 92);
+            this.cmdmod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdmod.Name = "cmdmod";
-            this.cmdmod.Size = new System.Drawing.Size(75, 23);
+            this.cmdmod.Size = new System.Drawing.Size(112, 59);
             this.cmdmod.TabIndex = 1;
             this.cmdmod.Text = "Ver Patos";
             this.cmdmod.UseVisualStyleBackColor = true;
@@ -54,13 +56,17 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 152);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(188)))), ((int)(((byte)(156)))));
+            this.ClientSize = new System.Drawing.Size(435, 234);
             this.Controls.Add(this.cmdmod);
             this.Controls.Add(this.btnadd);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menu";
             this.ResumeLayout(false);
 
         }

@@ -9,5 +9,6 @@ namespace DigiDuck.Grazna
     interface IQuack
     {
         string TypeQuack();
+        void Typesound();
     }
 }

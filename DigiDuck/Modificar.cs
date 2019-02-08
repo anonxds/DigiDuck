@@ -12,6 +12,8 @@ using DigiDuck.Grazna;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
+using DigiDuck.Filtros;
+using DigiDuck.picstrategy;
 
 namespace DigiDuck
 {
@@ -20,35 +22,42 @@ namespace DigiDuck
        SQLiteConnection con = new SQLiteConnection("Data Source=./Patos.sqlite3;Version=3;New=False;Compress=true;");
         private SQLiteCommand cmd;
         private SQLiteDataAdapter db;
+        InfoDuck d = new InfoDuck();
         public Modificar()
         {
             InitializeComponent();
             fillducks();
             volar();
-            quack();
+            d.quack(listaquack);
             tableHis();
             filtros();
         }
+      
 
         private void btnkill_Click(object sender, EventArgs e)
-        {
-            InfoDuck d = new InfoDuck();
-            Sqlite s = new Sqlite();
-            string matar = string.Format("insert into historial (Fecha,Nombre,Vive,Tipo) values ('{0}','{1}','{2}','{3}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm"), txtnombre.Text, "No", pato.Text);
-            s.Exe(matar);
-            string query = string.Format("delete from Patos where IdDuck = '{0}'",pato.Text);
-            con.Open();
-
-          
-            cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = query;
-            cmd.ExecuteNonQuery();
-            
-            con.Close();
-            clean();
-            MessageBox.Show("Se dio de baja el pato " + lblnombre.Text);
-        }
+        {try
+            {
+             
+                Sqlite s = new Sqlite();
+                string matar = string.Format("insert into historial (Fecha,Nombre,Vive,Tipo) values ('{0}','{1}','{2}','{3}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm"), txtnombre.Text, "No", pato.Text);
+                s.Exe(matar);
+                string query = string.Format("delete from Patos where IdDuck = '{0}'", pato.Text);
+                con.Open();
+                cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+                pictureBox1.Image = Properties.Resources.explode;
+                explode.Start();
+                con.Close();
+                clean();
+                MessageBox.Show("Se dio de baja el pato " + lblnombre.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("El pato ya se dio de baja");
+            }
+            }
         private void setcon()
         {
             con = new SQLiteConnection("Data Source=./Patos.sqlite3;Version=3;New=False;Compress=true;");
@@ -81,6 +90,38 @@ namespace DigiDuck
         {
             fill();
             enable();
+            showpic();
+         
+        }
+        public void showpic()
+        {
+            explode.Stop();
+            Metodo m = new Metodo();
+            m.spic(ducpic);
+            pictureBox1.Image = Properties.Resources.pixelheart;
+            switch (pato.Text)
+            {
+                case "Red Head":
+                    m.Setpic(new setRedhead());
+                    m.show();
+                    break;
+                case "Mallard":
+                    m.Setpic(new Setype());
+                    m.show();
+                    break;
+                case "Rubber":
+                    m.Setpic(new setRubber());
+                    m.show();
+                    break;
+                case "Toy":
+                    m.Setpic(new Settrum());
+                    m.show();
+                    break;
+                case "Decoy":
+                    m.Setpic(new setDecoy());
+                    m.show();
+                    break;
+            }
         }
         public void fill()
         {
@@ -114,7 +155,7 @@ namespace DigiDuck
 
         private void btnconfirmar_Click(object sender, EventArgs e)
         {
-            InfoDuck d = new InfoDuck();
+            
             Sqlite s = new Sqlite();
 
             if (ryes.Checked)
@@ -125,7 +166,7 @@ namespace DigiDuck
             {
                 d.Nada = "No";
             }
-            if (listaquack.Text == "" || listavolar.Text == "")
+            if (listaquack.Text == "" || listavolar.Text == "" || ryes.Checked == false && rno.Checked == false)
             {
                 MessageBox.Show("Anade un comportamiento");
 
@@ -138,6 +179,7 @@ namespace DigiDuck
                 string query = string.Format("insert into historial values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm"), txtnombre.Text, listaquack.Text, d.Nada, listavolar.Text, "si", pato.Text);
                 s.Exe(query);
                 MessageBox.Show("Se registro exitosamente");
+                clean();
             }
 
         }
@@ -146,33 +188,13 @@ namespace DigiDuck
 
             listavolar.Text = null;
             listaquack.Text = null;
-            pato.Text = null;
             txtnombre.Text   = lblfecha.Text = lblnada.Text = lblnombre.Text = lblquack.Text = lblvolar.Text = "";
-            
+            btnconfirmar.Enabled = btnkill.Enabled = false;
+            ryes.Checked = rno.Checked = false;
+            ducpic.Image = null;
         }
-        private void volar()
-        {
-            Ivolar ivolar, novolar, rocket;
-            ivolar = new Flyaway();
-            novolar = new Nofly();
-            rocket = new Rocketpower();
-            listavolar.Items.Add(ivolar.Comportamiento());
-            listavolar.Items.Add(novolar.Comportamiento());
-            listavolar.Items.Add(rocket.Comportamiento());
       
-        }
-        private void quack()
-        {
-            IQuack quack, mute, squeak;
-            quack = new Quack();
-            mute = new Mute();
-            squeak = new Squeak();
-            string[] l = new string[3] { quack.TypeQuack(), mute.TypeQuack(), squeak.TypeQuack() };
-            for (int i = 0; i < 3; i++)
-            {
-                listaquack.Items.Add(l[i]);
-            }
-        }
+      
         private void enable()
         {
             txtnombre.Enabled = listaquack.Enabled = listavolar.Enabled = ryes.Enabled = rno.Enabled = btnconfirmar.Enabled = btnkill.Enabled = true;
@@ -249,65 +271,79 @@ namespace DigiDuck
         {
             ExportDataTableToPdf(historial, "memes");
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
         public void filtros()
         {
-            string[] fil = new string[5] {"Viven","No viven","Mallard","Decoy","Red Head" };
+          
+            string[] por = new string[] {"Por tipo","Por Vida","Por volar","Por Graznar","Por Nadar" };
             for (int i = 0; i < 5; i++)
             {
-                filtrar.Items.Add(fil[i]);
+                Porfiltrar.Items.Add(por[i]);
             }
-
-         
-
-           
-
-
         }
+        IFiltro filtro;
         public void fil()
         {
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
-
-
-            setcon();
-            con.Open();
-            cmd = con.CreateCommand();
-            string cmdt = "select * from historial";
-            db = new SQLiteDataAdapter(cmdt, con);
-            ds.Reset();
-            db.Fill(ds);
-            dt = ds.Tables[0];
-            historial.DataSource = dt;
-            con.Close();
-
-            //opcion de usar el metodo estrategia
-            switch (filtrar.SelectedIndex)
+         //opcion de usar el metodo estrategia
+            switch (filtrar.Text)
             {
-                case 0:
-                    DataView dv = new DataView(dt, "Vive='Si'", "Vive desc", DataViewRowState.CurrentRows);
-                    historial.DataSource = dv;
+                case "Viven":
+            
+                    filtro = new PorVida();
+                    filtro.Filtrar(historial);
                     break;
-                case 1:
-                    DataView dc = new DataView(dt, "Vive='No'", "Vive desc", DataViewRowState.CurrentRows);
-                    historial.DataSource = dc;
+                case "No viven":
+                    filtro = new PorSinvida();
+                    filtro.Filtrar(historial);
                     break;
-                case 2:
-                    DataView dx = new DataView(dt, "Tipo='Mallard'", "Vive desc", DataViewRowState.CurrentRows);
-                    historial.DataSource = dx;
+                case "Mallard":
+                    filtro = new PorMallard();
+                    filtro.Filtrar(historial);
                     break;
-                case 3:
-                    DataView da = new DataView(dt, "Tipo='Decoy'", "Vive desc", DataViewRowState.CurrentRows);
-                    historial.DataSource = da;
+                case "Decoy":
+                    filtro = new Pordecoy();
+                    filtro.Filtrar(historial);
                     break;
-                case 4:
-                    DataView dq = new DataView(dt, "Tipo='Red head'", "Vive desc", DataViewRowState.CurrentRows);
-                    historial.DataSource = dq;
+                case "Red Head":
+                    filtro = new Portredhead();
+                    filtro.Filtrar(historial);
                     break;
+                case "Toy":
+                    filtro = new Portoy();
+                    filtro.Filtrar(historial);
+                    break;
+                case "Rubber":
+                    filtro = new Porrubber();
+                    filtro.Filtrar(historial);
+                    break;
+                case "Vuelan":
+                    filtro = new Porvolar();
+                    filtro.Filtrar(historial);
+                    break;
+                case "No vuelan":
+                    filtro = new Pornovolar();
+                    filtro.Filtrar(historial);
+                    break;
+                case "Tienen cohetes":
+                    filtro = new Porcohetes();
+                    filtro.Filtrar(historial);
+                    break;
+                case "Quack":
+                    filtro = new PorQuack();
+                    filtro.Filtrar(historial);
+                    break;
+                case "Squeak":
+                    filtro = new Squeaks();
+                    filtro.Filtrar(historial);
+                    break;
+                case "Nadar":
+                    filtro = new PorNadar();
+                    filtro.Filtrar(historial);
+                break;
+                case ".........":
+                    filtro = new Pormute();
+                    filtro.Filtrar(historial);
+                    break;
+
 
             }
         }
@@ -315,6 +351,70 @@ namespace DigiDuck
         private void filtrar_SelectedIndexChanged(object sender, EventArgs e)
         {
             fil();
+        }
+        public void volar()
+        {
+            Sqlite s = new Sqlite();
+            s._volar(listavolar);
+        }
+
+        private void btnrefresh_Click(object sender, EventArgs e)
+        {
+            tableHis();
+        }
+
+        private void explode_Tick(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+        }
+
+        private void Porfiltrar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filtrar.Items.Clear();
+            filtrar.Enabled = true;
+            switch (Porfiltrar.Text)
+            {
+                case "Por tipo":
+                    string[] fil = new string[5] {"Mallard", "Decoy", "Red Head", "Toy", "Rubber"};
+                    for (int i = 0; i < 5; i++)
+                    {
+                        filtrar.Items.Add(fil[i]);
+                    }
+                    break;
+                case "Por Vida":
+                    string[] vida = new string[2] { "Viven", "No viven"};
+                    for (int i = 0; i < 2; i++)
+                    {
+                        filtrar.Items.Add(vida[i]);
+                    }
+                    break;
+                case "Por volar":
+                    string[] volar = new string[3] { "Vuelan", "No vuelan", "Tienen cohetes"};
+                    for (int i = 0; i < 3; i++)
+                    {
+                        filtrar.Items.Add(volar[i]);
+                    }
+                    break;
+                case "Por Graznar":
+                    string[] graz = new string[3] { "Quack", "Squeak","........." };
+                    for (int i = 0; i < 3; i++)
+                    {
+                        filtrar.Items.Add(graz[i]);
+                    }
+                    break;
+                case "Por Nadar":
+                    filtrar.Items.Add("Nadar");
+                    break;
+
+
+
+
+            }
+        }
+
+        private void listaquack_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

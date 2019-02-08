@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DigiDuck.Filtros
 {
-    class PorMallard : IFiltro
+    class PorMallard: IFiltro
     {
-        public void Filtrar()
+      
+
+        public void Filtrar(DataGridView historial)
         {
-            throw new NotImplementedException();
+            Sqlite s = new Sqlite();
+            s.f(historial, "Tipo='Mallard'", "Vive desc");
         }
     }
 }

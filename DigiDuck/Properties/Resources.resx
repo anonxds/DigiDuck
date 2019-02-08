@@ -121,7 +121,31 @@
   <data name="clown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clown.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="decoy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\decoy.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mallard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mallard.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="quack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\quack.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="redhead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\redhead.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rubber" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rubber.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trump" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trump.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hearrt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hearrt.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="explode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\explode.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pixelheart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pixelheart.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

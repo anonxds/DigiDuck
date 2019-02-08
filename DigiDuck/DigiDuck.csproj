@@ -101,16 +101,32 @@
     <Compile Include="AddDuck.Designer.cs">
       <DependentUpon>AddDuck.cs</DependentUpon>
     </Compile>
+    <Compile Include="DB\ADB.cs" />
+    <Compile Include="DB\Insertar.cs" />
+    <Compile Include="Ducks\Decoy.cs" />
+    <Compile Include="Ducks\fotos\Duckphotos.cs" />
+    <Compile Include="Ducks\fotos\Ip.cs" />
+    <Compile Include="Ducks\fotos\PMallard.cs" />
+    <Compile Include="Ducks\Iduck.cs" />
     <Compile Include="Ducks\Mallard.cs" />
+    <Compile Include="Ducks\RedHead.cs" />
+    <Compile Include="Ducks\Rubber.cs" />
+    <Compile Include="Ducks\Toy.cs" />
     <Compile Include="Filtros\IFiltro.cs" />
+    <Compile Include="Filtros\PorNadar.cs" />
+    <Compile Include="Filtros\Porcohetes.cs" />
     <Compile Include="Filtros\Pordecoy.cs" />
     <Compile Include="Filtros\PorMallard.cs" />
+    <Compile Include="Filtros\Pornovolar.cs" />
+    <Compile Include="Filtros\PorQuack.cs" />
     <Compile Include="Filtros\Porrubber.cs" />
     <Compile Include="Filtros\PorSinvida.cs" />
     <Compile Include="Filtros\Portoy.cs" />
     <Compile Include="Filtros\Portredhead.cs" />
     <Compile Include="Filtros\PorVida.cs" />
-    <Compile Include="Flyaway.cs" />
+    <Compile Include="Filtros\Porvolar.cs" />
+    <Compile Include="Filtros\Squeak.cs" />
+    <Compile Include="Fly\Flyaway.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,19 +139,21 @@
     <Compile Include="Grazna\Setgraz.cs" />
     <Compile Include="Grazna\Squeak.cs" />
     <Compile Include="InfoDuck.cs" />
-    <Compile Include="Ivolar.cs" />
-    <Compile Include="listaCB.cs" />
+    <Compile Include="Fly\Ivolar.cs" />
     <Compile Include="Modificar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modificar.Designer.cs">
       <DependentUpon>Modificar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nofly.cs" />
+    <Compile Include="Fly\Nofly.cs" />
+    <Compile Include="Nadar\Swim.cs" />
+    <Compile Include="picstrategy\Metodo.cs" />
+    <Compile Include="picstrategy\Setype.cs" />
+    <Compile Include="picstrategy\showpic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="prueba.cs" />
-    <Compile Include="Rocketpower.cs" />
+    <Compile Include="Fly\Rocketpower.cs" />
     <Compile Include="Sqlite.cs" />
     <EmbeddedResource Include="AddDuck.resx">
       <DependentUpon>AddDuck.cs</DependentUpon>
@@ -188,6 +206,16 @@
     <None Include="Resources\clowns.mp3" />
     <None Include="Resources\clown-horn-sound-effect_1.mp3" />
     <None Include="bin\Debug\quack.wav" />
+    <None Include="Resources\mallard.jpg" />
+    <None Include="Resources\redhead.jpg" />
+    <None Include="Resources\decoy.jpg" />
+    <None Include="Resources\rubber.jpg" />
+    <None Include="Resources\Trump.jpg" />
+    <None Include="Resources\hearrt.gif" />
+    <None Include="Resources\Hated Terrorists.mp3" />
+    <None Include="Resources\Hated Terrorists.wma" />
+    <None Include="Resources\pixelheart.gif" />
+    <None Include="Resources\explode.gif" />
     <Content Include="x64\SQLite.Interop.dll" />
     <Content Include="x86\SQLite.Interop.dll" />
   </ItemGroup>

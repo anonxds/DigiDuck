@@ -14,5 +14,10 @@ namespace DigiDuck.Grazna
             d.Grazna = "..............";
             return d.Grazna;
         }
+
+        public void Typesound()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
