@@ -54,3 +54,6 @@ C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\System.Data.SQLite.dl
 C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.exe.manifest
 C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.application
 C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\obj\Debug\DigiDuck.csproj.CopyComplete
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\MetroFramework.Design.dll
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\MetroFramework.dll
+C:\Users\user\Documents\GitHub\DigiDuck\DigiDuck\bin\Debug\MetroFramework.Fonts.dll

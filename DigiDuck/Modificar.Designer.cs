@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnkill = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pato = new System.Windows.Forms.ComboBox();
             this.lblnombre = new System.Windows.Forms.Label();
             this.lblquack = new System.Windows.Forms.Label();
@@ -48,7 +50,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnregresar = new System.Windows.Forms.Button();
-            this.historial = new System.Windows.Forms.DataGridView();
             this.btnhistorial = new System.Windows.Forms.Button();
             this.filtrar = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -57,26 +58,20 @@
             this.label9 = new System.Windows.Forms.Label();
             this.labNoel10 = new System.Windows.Forms.Label();
             this.btnrefresh = new System.Windows.Forms.Button();
-            this.ducpic = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.explode = new System.Windows.Forms.Timer(this.components);
             this.Porfiltrar = new System.Windows.Forms.ComboBox();
+            this.historial = new MetroFramework.Controls.MetroGrid();
+            this.btnsalir = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ducpic = new System.Windows.Forms.PictureBox();
+            this.btnkill = new System.Windows.Forms.Button();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.historial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ducpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ducpic)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnkill
-            // 
-            this.btnkill.Enabled = false;
-            this.btnkill.Location = new System.Drawing.Point(484, 299);
-            this.btnkill.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnkill.Name = "btnkill";
-            this.btnkill.Size = new System.Drawing.Size(156, 74);
-            this.btnkill.TabIndex = 0;
-            this.btnkill.Text = "Dar de baja el pato";
-            this.btnkill.UseVisualStyleBackColor = true;
-            this.btnkill.Click += new System.EventHandler(this.btnkill_Click);
             // 
             // pato
             // 
@@ -131,6 +126,7 @@
             // 
             // txtnombre
             // 
+            this.txtnombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.txtnombre.Enabled = false;
             this.txtnombre.Location = new System.Drawing.Point(46, 525);
             this.txtnombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -140,6 +136,7 @@
             // 
             // listavolar
             // 
+            this.listavolar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.listavolar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listavolar.Enabled = false;
             this.listavolar.FormattingEnabled = true;
@@ -151,6 +148,7 @@
             // 
             // listaquack
             // 
+            this.listaquack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.listaquack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listaquack.Enabled = false;
             this.listaquack.FormattingEnabled = true;
@@ -164,6 +162,7 @@
             // ryes
             // 
             this.ryes.AutoSize = true;
+            this.ryes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.ryes.Enabled = false;
             this.ryes.Location = new System.Drawing.Point(606, 531);
             this.ryes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -172,11 +171,12 @@
             this.ryes.TabIndex = 9;
             this.ryes.TabStop = true;
             this.ryes.Text = "Si";
-            this.ryes.UseVisualStyleBackColor = true;
+            this.ryes.UseVisualStyleBackColor = false;
             // 
             // rno
             // 
             this.rno.AutoSize = true;
+            this.rno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.rno.Enabled = false;
             this.rno.Location = new System.Drawing.Point(698, 531);
             this.rno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -185,10 +185,11 @@
             this.rno.TabIndex = 10;
             this.rno.TabStop = true;
             this.rno.Text = "No";
-            this.rno.UseVisualStyleBackColor = true;
+            this.rno.UseVisualStyleBackColor = false;
             // 
             // btnconfirmar
             // 
+            this.btnconfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.btnconfirmar.Enabled = false;
             this.btnconfirmar.Location = new System.Drawing.Point(46, 594);
             this.btnconfirmar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -196,7 +197,7 @@
             this.btnconfirmar.Size = new System.Drawing.Size(112, 35);
             this.btnconfirmar.TabIndex = 11;
             this.btnconfirmar.Text = "Confirmar";
-            this.btnconfirmar.UseVisualStyleBackColor = true;
+            this.btnconfirmar.UseVisualStyleBackColor = false;
             this.btnconfirmar.Click += new System.EventHandler(this.btnconfirmar_Click);
             // 
             // lblvolar
@@ -222,6 +223,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.label2.Location = new System.Drawing.Point(87, 500);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -232,6 +234,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.label3.Location = new System.Drawing.Point(261, 500);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -242,6 +245,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.label4.Location = new System.Drawing.Point(447, 500);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -252,6 +256,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.label5.Location = new System.Drawing.Point(646, 500);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -261,28 +266,19 @@
             // 
             // btnregresar
             // 
+            this.btnregresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.btnregresar.Location = new System.Drawing.Point(290, 594);
             this.btnregresar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnregresar.Name = "btnregresar";
             this.btnregresar.Size = new System.Drawing.Size(98, 46);
             this.btnregresar.TabIndex = 18;
             this.btnregresar.Text = "Regresar";
-            this.btnregresar.UseVisualStyleBackColor = true;
+            this.btnregresar.UseVisualStyleBackColor = false;
             this.btnregresar.Click += new System.EventHandler(this.btnregresar_Click);
-            // 
-            // historial
-            // 
-            this.historial.AllowUserToAddRows = false;
-            this.historial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.historial.Location = new System.Drawing.Point(34, 662);
-            this.historial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.historial.Name = "historial";
-            this.historial.Size = new System.Drawing.Size(1148, 231);
-            this.historial.TabIndex = 19;
             // 
             // btnhistorial
             // 
-            this.btnhistorial.Location = new System.Drawing.Point(910, 617);
+            this.btnhistorial.Location = new System.Drawing.Point(928, 134);
             this.btnhistorial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnhistorial.Name = "btnhistorial";
             this.btnhistorial.Size = new System.Drawing.Size(138, 35);
@@ -355,31 +351,13 @@
             // 
             // btnrefresh
             // 
-            this.btnrefresh.Location = new System.Drawing.Point(812, 618);
+            this.btnrefresh.Location = new System.Drawing.Point(827, 135);
             this.btnrefresh.Name = "btnrefresh";
-            this.btnrefresh.Size = new System.Drawing.Size(75, 34);
+            this.btnrefresh.Size = new System.Drawing.Size(94, 34);
             this.btnrefresh.TabIndex = 28;
             this.btnrefresh.Text = "refrescar";
             this.btnrefresh.UseVisualStyleBackColor = true;
             this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
-            // 
-            // ducpic
-            // 
-            this.ducpic.Location = new System.Drawing.Point(375, 90);
-            this.ducpic.Name = "ducpic";
-            this.ducpic.Size = new System.Drawing.Size(201, 201);
-            this.ducpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ducpic.TabIndex = 29;
-            this.ducpic.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(375, 297);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 80);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 30;
-            this.pictureBox1.TabStop = false;
             // 
             // explode
             // 
@@ -396,6 +374,111 @@
             this.Porfiltrar.TabIndex = 31;
             this.Porfiltrar.SelectedIndexChanged += new System.EventHandler(this.Porfiltrar_SelectedIndexChanged);
             // 
+            // historial
+            // 
+            this.historial.AllowUserToAddRows = false;
+            this.historial.AllowUserToResizeRows = false;
+            this.historial.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.historial.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.historial.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.historial.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.historial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.historial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.historial.DefaultCellStyle = dataGridViewCellStyle2;
+            this.historial.EnableHeadersVisualStyles = false;
+            this.historial.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.historial.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.historial.Location = new System.Drawing.Point(22, 694);
+            this.historial.Name = "historial";
+            this.historial.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.historial.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.historial.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.historial.RowTemplate.Height = 28;
+            this.historial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.historial.Size = new System.Drawing.Size(1166, 212);
+            this.historial.TabIndex = 32;
+            // 
+            // btnsalir
+            // 
+            this.btnsalir.Location = new System.Drawing.Point(1045, 434);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Size = new System.Drawing.Size(90, 44);
+            this.btnsalir.TabIndex = 33;
+            this.btnsalir.Text = "Salir";
+            this.btnsalir.UseVisualStyleBackColor = true;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(375, 297);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(84, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ducpic
+            // 
+            this.ducpic.Location = new System.Drawing.Point(375, 90);
+            this.ducpic.Name = "ducpic";
+            this.ducpic.Size = new System.Drawing.Size(201, 201);
+            this.ducpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ducpic.TabIndex = 29;
+            this.ducpic.TabStop = false;
+            // 
+            // btnkill
+            // 
+            this.btnkill.Enabled = false;
+            this.btnkill.Image = global::DigiDuck.Properties.Resources.duck__1_;
+            this.btnkill.Location = new System.Drawing.Point(484, 299);
+            this.btnkill.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnkill.Name = "btnkill";
+            this.btnkill.Size = new System.Drawing.Size(119, 74);
+            this.btnkill.TabIndex = 0;
+            this.btnkill.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnkill.UseVisualStyleBackColor = true;
+            this.btnkill.Click += new System.EventHandler(this.btnkill_Click);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(48, 25);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(35, 19);
+            this.metroLabel1.TabIndex = 34;
+            this.metroLabel1.Text = "Pato";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.panel1.Controls.Add(this.btnhistorial);
+            this.panel1.Controls.Add(this.btnrefresh);
+            this.panel1.Location = new System.Drawing.Point(12, 484);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1113, 191);
+            this.panel1.TabIndex = 35;
+            // 
             // Modificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -403,18 +486,18 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(188)))), ((int)(((byte)(156)))));
             this.ClientSize = new System.Drawing.Size(1200, 918);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.btnsalir);
+            this.Controls.Add(this.historial);
             this.Controls.Add(this.Porfiltrar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ducpic);
-            this.Controls.Add(this.btnrefresh);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.labNoel10);
             this.Controls.Add(this.filtrar);
-            this.Controls.Add(this.btnhistorial);
-            this.Controls.Add(this.historial);
             this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -434,14 +517,16 @@
             this.Controls.Add(this.lblnombre);
             this.Controls.Add(this.pato);
             this.Controls.Add(this.btnkill);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Modificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar";
             ((System.ComponentModel.ISupportInitialize)(this.historial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ducpic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ducpic)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,7 +553,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnregresar;
-        private System.Windows.Forms.DataGridView historial;
         private System.Windows.Forms.Button btnhistorial;
         private System.Windows.Forms.ComboBox filtrar;
         private System.Windows.Forms.Label label6;
@@ -481,5 +565,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer explode;
         private System.Windows.Forms.ComboBox Porfiltrar;
+        private MetroFramework.Controls.MetroGrid historial;
+        private System.Windows.Forms.Button btnsalir;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

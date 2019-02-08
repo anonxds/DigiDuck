@@ -49,6 +49,7 @@
             this.lblfly = new System.Windows.Forms.Label();
             this.lblN = new System.Windows.Forms.Label();
             this.duckPic = new System.Windows.Forms.PictureBox();
+            this.btnterminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.duckPic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -261,12 +262,23 @@
             this.duckPic.TabIndex = 18;
             this.duckPic.TabStop = false;
             // 
+            // btnterminar
+            // 
+            this.btnterminar.Location = new System.Drawing.Point(594, 387);
+            this.btnterminar.Name = "btnterminar";
+            this.btnterminar.Size = new System.Drawing.Size(85, 35);
+            this.btnterminar.TabIndex = 19;
+            this.btnterminar.Text = "Salir";
+            this.btnterminar.UseVisualStyleBackColor = true;
+            this.btnterminar.Click += new System.EventHandler(this.btnterminar_Click);
+            // 
             // AddDuck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(188)))), ((int)(((byte)(156)))));
             this.ClientSize = new System.Drawing.Size(691, 434);
+            this.Controls.Add(this.btnterminar);
             this.Controls.Add(this.duckPic);
             this.Controls.Add(this.lblN);
             this.Controls.Add(this.lblfly);
@@ -291,6 +303,7 @@
             this.Name = "AddDuck";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddDuck";
+            this.Load += new System.EventHandler(this.AddDuck_Load);
             ((System.ComponentModel.ISupportInitialize)(this.duckPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -319,5 +332,6 @@
         private System.Windows.Forms.Label lblfly;
         private System.Windows.Forms.Label lblN;
         private System.Windows.Forms.PictureBox duckPic;
+        private System.Windows.Forms.Button btnterminar;
     }
 }

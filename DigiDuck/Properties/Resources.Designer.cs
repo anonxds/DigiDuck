@@ -82,6 +82,26 @@ namespace DigiDuck.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap duck {
+            get {
+                object obj = ResourceManager.GetObject("duck", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap duck__1_ {
+            get {
+                object obj = ResourceManager.GetObject("duck__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap explode {
             get {
                 object obj = ResourceManager.GetObject("explode", resourceCulture);
@@ -145,6 +165,15 @@ namespace DigiDuck.Properties {
             get {
                 object obj = ResourceManager.GetObject("rubber", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Shotgun_Pump {
+            get {
+                return ResourceManager.GetStream("Shotgun_Pump", resourceCulture);
             }
         }
         

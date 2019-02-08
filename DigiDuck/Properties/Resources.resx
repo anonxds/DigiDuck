@@ -148,4 +148,13 @@
   <data name="pixelheart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pixelheart.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="duck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\duck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="duck__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\duck (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shotgun_Pump" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shotgun+Pump.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

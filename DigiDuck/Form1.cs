@@ -32,5 +32,10 @@ namespace DigiDuck
             d.Show();
             this.Hide();
         }
+
+        private void btnterminar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

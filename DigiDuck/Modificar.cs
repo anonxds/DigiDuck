@@ -14,6 +14,7 @@ using iTextSharp.text;
 using System.IO;
 using DigiDuck.Filtros;
 using DigiDuck.picstrategy;
+using System.Media;
 
 namespace DigiDuck
 {
@@ -51,6 +52,9 @@ namespace DigiDuck
                 explode.Start();
                 con.Close();
                 clean();
+                Stream stream = Properties.Resources.Shotgun_Pump;
+                SoundPlayer v = new SoundPlayer(stream);
+                v.Play();
                 MessageBox.Show("Se dio de baja el pato " + lblnombre.Text);
             }
             catch (Exception)
@@ -179,6 +183,7 @@ namespace DigiDuck
                 string query = string.Format("insert into historial values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm"), txtnombre.Text, listaquack.Text, d.Nada, listavolar.Text, "si", pato.Text);
                 s.Exe(query);
                 MessageBox.Show("Se registro exitosamente");
+                tableHis();
                 clean();
             }
 
@@ -415,6 +420,11 @@ namespace DigiDuck
         private void listaquack_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

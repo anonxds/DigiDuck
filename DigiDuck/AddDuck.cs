@@ -148,6 +148,17 @@ namespace DigiDuck
         public void dis(){
         btnagregar.Enabled =   txtnombre.Enabled = true;
         }
+
+        private void AddDuck_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnterminar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         public void en()
         {
             btnagregar.Enabled = txtnombre.Enabled = listacomportamiento.Enabled = listaquack.Enabled = ryes.Enabled = Rno.Enabled = false;

@@ -30,11 +30,12 @@
         {
             this.btnadd = new System.Windows.Forms.Button();
             this.cmdmod = new System.Windows.Forms.Button();
+            this.btnterminar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnadd
             // 
-            this.btnadd.Location = new System.Drawing.Point(86, 92);
+            this.btnadd.Location = new System.Drawing.Point(86, 75);
             this.btnadd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(112, 59);
@@ -45,7 +46,7 @@
             // 
             // cmdmod
             // 
-            this.cmdmod.Location = new System.Drawing.Point(227, 92);
+            this.cmdmod.Location = new System.Drawing.Point(230, 75);
             this.cmdmod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdmod.Name = "cmdmod";
             this.cmdmod.Size = new System.Drawing.Size(112, 59);
@@ -54,12 +55,23 @@
             this.cmdmod.UseVisualStyleBackColor = true;
             this.cmdmod.Click += new System.EventHandler(this.cmdmod_Click);
             // 
+            // btnterminar
+            // 
+            this.btnterminar.Location = new System.Drawing.Point(177, 163);
+            this.btnterminar.Name = "btnterminar";
+            this.btnterminar.Size = new System.Drawing.Size(75, 38);
+            this.btnterminar.TabIndex = 2;
+            this.btnterminar.Text = "Salir";
+            this.btnterminar.UseVisualStyleBackColor = true;
+            this.btnterminar.Click += new System.EventHandler(this.btnterminar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(188)))), ((int)(((byte)(156)))));
             this.ClientSize = new System.Drawing.Size(435, 234);
+            this.Controls.Add(this.btnterminar);
             this.Controls.Add(this.cmdmod);
             this.Controls.Add(this.btnadd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -75,6 +87,7 @@
 
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Button cmdmod;
+        private System.Windows.Forms.Button btnterminar;
     }
 }
 
