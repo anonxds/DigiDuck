@@ -13,6 +13,7 @@ using System.Media;
 using System.IO;
 using DigiDuck.Ducks;
 using DigiDuck.Properties;
+using DigiDuck.NewStrategy;
 
 namespace DigiDuck
 {
@@ -157,6 +158,13 @@ namespace DigiDuck
         private void btnterminar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            ITypeduck mallard;
+            mallard = new Mallard2();
+         lblcomportamiento.Text =   mallard.infoduck();
         }
 
         public void en()

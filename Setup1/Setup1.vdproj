@@ -15,13 +15,25 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_04765CDCE6E04CC2AE3F8593115C022C"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_02E1F6EA07007DBF414B80CE3A13E70F"
+        "OwnerKey" = "8:_39D95E9B17D06F42D8F7D2C2493F17B5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_282F700754A04C51B0487C02DDAA2D7A"
+        "MsmKey" = "8:_02E1F6EA07007DBF414B80CE3A13E70F"
+        "OwnerKey" = "8:_B1E5F67704858D37BE7CEC13534D97F1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_02E1F6EA07007DBF414B80CE3A13E70F"
+        "OwnerKey" = "8:_60A47687D4F5409F9D0C0FFD3AE0C03B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_04765CDCE6E04CC2AE3F8593115C022C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -34,6 +46,12 @@
         "Entry"
         {
         "MsmKey" = "8:_382731C30C72B48A16C302AFBF48084D"
+        "OwnerKey" = "8:_60A47687D4F5409F9D0C0FFD3AE0C03B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_39D95E9B17D06F42D8F7D2C2493F17B5"
         "OwnerKey" = "8:_60A47687D4F5409F9D0C0FFD3AE0C03B"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -87,6 +105,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_68B8E0403A1A4035816F2EBA3C018885"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_6C75B7B661004BD6B98083DDD242E297"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -107,6 +131,12 @@
         {
         "MsmKey" = "8:_A21BC2EB0DEC45CBA0ECEBEE7F4C9A09"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B1E5F67704858D37BE7CEC13534D97F1"
+        "OwnerKey" = "8:_60A47687D4F5409F9D0C0FFD3AE0C03B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -196,6 +226,24 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_B1E5F67704858D37BE7CEC13534D97F1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_39D95E9B17D06F42D8F7D2C2493F17B5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_02E1F6EA07007DBF414B80CE3A13E70F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_937AFCE0C1FD4D0631EBBC4594CEDC94"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -274,6 +322,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -304,10 +360,21 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_04765CDCE6E04CC2AE3F8593115C022C"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_02E1F6EA07007DBF414B80CE3A13E70F"
             {
-            "SourcePath" = "8:..\\DigiDuck\\bin\\Debug\\System.Data.SQLite.dll.config"
-            "TargetName" = "8:System.Data.SQLite.dll.config"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_02E1F6EA07007DBF414B80CE3A13E70F"
+                    {
+                    "Name" = "8:MetroFramework.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MetroFramework.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_B2C674DA35114A2EBC3C46C2F77634B3"
             "Condition" = "8:"
@@ -321,13 +388,13 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_282F700754A04C51B0487C02DDAA2D7A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_04765CDCE6E04CC2AE3F8593115C022C"
             {
-            "SourcePath" = "8:..\\DigiDuck\\bin\\Debug\\Patos.sqlite3"
-            "TargetName" = "8:Patos.sqlite3"
+            "SourcePath" = "8:..\\DigiDuck\\bin\\Debug\\System.Data.SQLite.dll.config"
+            "TargetName" = "8:System.Data.SQLite.dll.config"
             "Tag" = "8:"
             "Folder" = "8:_B2C674DA35114A2EBC3C46C2F77634B3"
             "Condition" = "8:"
@@ -389,6 +456,37 @@
                     }
                 }
             "SourcePath" = "8:System.Data.SQLite.Linq.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B2C674DA35114A2EBC3C46C2F77634B3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_39D95E9B17D06F42D8F7D2C2493F17B5"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_39D95E9B17D06F42D8F7D2C2493F17B5"
+                    {
+                    "Name" = "8:MetroFramework.Design.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MetroFramework.Design.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_B2C674DA35114A2EBC3C46C2F77634B3"
@@ -519,6 +617,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_68B8E0403A1A4035816F2EBA3C018885"
+            {
+            "SourcePath" = "8:..\\DigiDuck\\bin\\Debug\\Patos.sqlite3"
+            "TargetName" = "8:Patos.sqlite3"
+            "Tag" = "8:"
+            "Folder" = "8:_B2C674DA35114A2EBC3C46C2F77634B3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6C75B7B661004BD6B98083DDD242E297"
             {
             "AssemblyRegister" = "3:1"
@@ -630,6 +748,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B1E5F67704858D37BE7CEC13534D97F1"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_B1E5F67704858D37BE7CEC13534D97F1"
+                    {
+                    "Name" = "8:MetroFramework.Fonts.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MetroFramework.Fonts.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B2C674DA35114A2EBC3C46C2F77634B3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C4945692FF0D4791A921B8A11275AA5F"
@@ -771,7 +920,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup1"
         "ProductCode" = "8:{2AA7B8D3-3476-4418-B484-193E39BBF743}"
-        "PackageCode" = "8:{8CD78498-0FF3-42D0-887A-76EF921BCDF1}"
+        "PackageCode" = "8:{162E2BCC-2FD7-4515-881D-8678772EF480}"
         "UpgradeCode" = "8:{F3A7B1E2-9D8F-4C56-82AD-381CCE8DDCFD}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

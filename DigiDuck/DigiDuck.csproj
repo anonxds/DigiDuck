@@ -157,6 +157,8 @@
     </Compile>
     <Compile Include="Fly\Nofly.cs" />
     <Compile Include="Nadar\Swim.cs" />
+    <Compile Include="NewStrategy\ITypeduck.cs" />
+    <Compile Include="NewStrategy\Typeduck.cs" />
     <Compile Include="picstrategy\Metodo.cs" />
     <Compile Include="picstrategy\Setype.cs" />
     <Compile Include="picstrategy\showpic.cs" />

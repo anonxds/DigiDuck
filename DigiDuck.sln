@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiDuck", "DigiDuck\DigiDu
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{9826DFE9-9AC5-4E2F-B3DC-AF25364BF548}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "duck", "duck\duck.vdproj", "{B9AB450C-91A2-44C6-B6AE-E7AF700407AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,8 @@ Global
 		{BA05A8FC-4811-4AAA-A5CB-C1E04B70E52D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9826DFE9-9AC5-4E2F-B3DC-AF25364BF548}.Debug|Any CPU.ActiveCfg = Debug
 		{9826DFE9-9AC5-4E2F-B3DC-AF25364BF548}.Release|Any CPU.ActiveCfg = Release
+		{B9AB450C-91A2-44C6-B6AE-E7AF700407AC}.Debug|Any CPU.ActiveCfg = Debug
+		{B9AB450C-91A2-44C6-B6AE-E7AF700407AC}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

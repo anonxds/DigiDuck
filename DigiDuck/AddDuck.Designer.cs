@@ -50,6 +50,7 @@
             this.lblN = new System.Windows.Forms.Label();
             this.duckPic = new System.Windows.Forms.PictureBox();
             this.btnterminar = new System.Windows.Forms.Button();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.duckPic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -272,12 +273,23 @@
             this.btnterminar.UseVisualStyleBackColor = true;
             this.btnterminar.Click += new System.EventHandler(this.btnterminar_Click);
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(366, 355);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(118, 45);
+            this.metroButton1.TabIndex = 20;
+            this.metroButton1.Text = "Add mallard";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // AddDuck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(188)))), ((int)(((byte)(156)))));
             this.ClientSize = new System.Drawing.Size(691, 434);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.btnterminar);
             this.Controls.Add(this.duckPic);
             this.Controls.Add(this.lblN);
@@ -333,5 +345,6 @@
         private System.Windows.Forms.Label lblN;
         private System.Windows.Forms.PictureBox duckPic;
         private System.Windows.Forms.Button btnterminar;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
