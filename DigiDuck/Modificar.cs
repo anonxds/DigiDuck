@@ -433,6 +433,10 @@ namespace DigiDuck
         {
             try
             {
+            
+
+
+
                 BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
                 PdfPTable pdfPTable = new PdfPTable(historial.Columns.Count);
                 pdfPTable.DefaultCell.Padding = 3;
@@ -479,6 +483,7 @@ namespace DigiDuck
                 client.Send(mail);
                 btnemail.Enabled = false;
                 txtemail.Text = "";
+                MessageBox.Show("Mensaje enviado");
             }
             catch(Exception ex)
             {
@@ -492,6 +497,10 @@ namespace DigiDuck
         private void txtemail_TextChanged(object sender, EventArgs e)
         {
             btnemail.Enabled = true;
+            if (string.IsNullOrWhiteSpace(txtemail.Text))
+            {
+                btnemail.Enabled = false;
+            }
         }
     }
 }
