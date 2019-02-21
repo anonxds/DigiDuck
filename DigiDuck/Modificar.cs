@@ -15,6 +15,8 @@ using System.IO;
 using DigiDuck.Filtros;
 using DigiDuck.picstrategy;
 using System.Media;
+using System.Net.Mail;
+using System.Net;
 
 namespace DigiDuck
 {
@@ -425,6 +427,71 @@ namespace DigiDuck
         private void btnsalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnemail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+                PdfPTable pdfPTable = new PdfPTable(historial.Columns.Count);
+                pdfPTable.DefaultCell.Padding = 3;
+                pdfPTable.WidthPercentage = 100;
+                pdfPTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                pdfPTable.DefaultCell.BorderWidth = 1;
+                iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+                foreach (DataGridViewColumn column in historial.Columns)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, text));
+                    cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                    pdfPTable.AddCell(cell);
+                }
+                foreach (DataGridViewRow row in historial.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        pdfPTable.AddCell(new Phrase(cell.Value.ToString(), text));
+                    }
+                }
+
+
+
+                Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                MemoryStream memoryStream2 = new MemoryStream();
+                PdfWriter write = PdfWriter.GetInstance(pdfdoc, memoryStream2);
+
+                pdfdoc.Open();
+                pdfdoc.Add(pdfPTable);
+                write.CloseStream = false;
+                pdfdoc.Close();
+                memoryStream2.Position = 0;
+
+
+
+
+
+                MailMessage mail = new MailMessage("bejeweler2@gmail.com", txtemail.Text, "Reticula", "Listado de patos");
+                mail.Attachments.Add(new Attachment(memoryStream2, "Ducks.pdf"));
+                SmtpClient client = new SmtpClient("smtp.gmail.com");
+                client.Port = 587;
+                client.Credentials = new System.Net.NetworkCredential("bejeweler2@gmail.com", "bejeweled2012");
+                client.EnableSsl = true;
+                client.Send(mail);
+                btnemail.Enabled = false;
+                txtemail.Text = "";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Hubo un error "+ex);
+            }
+
+
+            
+        }
+
+        private void txtemail_TextChanged(object sender, EventArgs e)
+        {
+            btnemail.Enabled = true;
         }
     }
 }

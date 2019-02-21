@@ -15,11 +15,12 @@ namespace DigiDuck.NewStrategy
             InfoDuck type;
             Ivolar ivolar;
             ivolar = new Flyaway();
-          // type.Nombre = "Mallard";
+           string Nombre = "Mallard";
             Swim s = new Swim();
-            type.Nada = s.S();
+            string Nada = s.S();
 
-            return type.Nada;
+            return  Nombre;
+           
 
         }
     }

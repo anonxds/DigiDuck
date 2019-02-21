@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DigiDuck.exe" size="1230824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DigiDuck.exe" size="1232872">
       <assemblyIdentity name="DigiDuck" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>K1BBx9Dsm3Op8YgaiMjKbgyCP6c87x9o679/qqIN0mg=</dsig:DigestValue>
+        <dsig:DigestValue>AMeojNVnVXJQIUZWtAjfXGXLHW08HQQlpg8crsAvDcY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
